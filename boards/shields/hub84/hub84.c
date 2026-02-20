@@ -82,8 +82,8 @@ static int bat_led_listener_cb(const zmk_event_t *eh) {
     const struct zmk_battery_state_changed *ev = as_zmk_battery_state_changed(eh);
     if (!ev) return 0;
 
-    // Define low battery threshold (temporarily set to <= 100% for testing)
-    if (ev->state_of_charge <= 100) {
+    // Define low battery threshold (e.g., <= 20%)
+    if (ev->state_of_charge <= 20) {
         if (!is_breathing_active) {
             is_breathing_active = true;
             k_timer_start(&breathe_timer, K_MSEC(BREATHE_STEP_MS), K_MSEC(BREATHE_STEP_MS));
