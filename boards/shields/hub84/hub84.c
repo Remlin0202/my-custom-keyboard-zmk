@@ -3,7 +3,6 @@
 #include <zephyr/devicetree.h>
 #include <zephyr/drivers/gpio.h>
 #include <zephyr/sys/util.h>
-#include <zmk/hid_indicators.h>
 #include <zmk/events/hid_indicators_changed.h>
 
 #if IS_ENABLED(CONFIG_ZMK_HID_INDICATORS)
