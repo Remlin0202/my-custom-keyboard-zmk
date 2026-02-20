@@ -1,1 +1,2 @@
+zephyr_include_directories(${APPLICATION_SOURCE_DIR}/include)
 zephyr_library_sources_ifdef(CONFIG_SHIELD_HUB84 hub84.c)
