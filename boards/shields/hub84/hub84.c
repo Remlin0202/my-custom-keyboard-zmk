@@ -24,10 +24,14 @@ static int caps_led_init(void) {
 SYS_INIT(caps_led_init, APPLICATION, CONFIG_APPLICATION_INIT_PRIORITY);
 
 static int caps_led_listener_cb(const zmk_event_t *eh) {
-    zmk_hid_indicators_t flags = zmk_hid_indicators_get_current_profile();
+    const struct zmk_hid_indicators_changed *ev = as_zmk_hid_indicators_changed(eh);
     
     // USB HID standard: Num Lock is bit 0, Caps Lock is bit 1, Scroll Lock is bit 2
-    if (flags & BIT(1)) { 
+    if (!ev) {
+        return 0;
+    }
+
+    if (ev->indicators & BIT(1)) { 
         gpio_pin_set_dt(&led, 1);
     } else {
         gpio_pin_set_dt(&led, 0);

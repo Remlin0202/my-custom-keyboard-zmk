@@ -1,3 +1,1 @@
-if (SHIELD_HUB84)
-    zephyr_sources(hub84.c)
-endif()
+zephyr_library_sources_ifdef(CONFIG_SHIELD_HUB84 hub84.c)
