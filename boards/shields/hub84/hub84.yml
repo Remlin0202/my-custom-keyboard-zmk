@@ -3,7 +3,7 @@ id: hub84
 name: HUB84
 type: shield
 url: https://space.bilibili.com/87921357
-requires: [nrfmicro_13_52840]
+requires: [nrfmicro_13]
 features:
   - keys
   - studio
