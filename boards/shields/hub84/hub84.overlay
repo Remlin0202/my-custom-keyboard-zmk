@@ -16,6 +16,7 @@
     keys_def: keys_def {
         compatible = "zmk,physical-layout-keys";
         #key-cells = <4>;
+        zmk,keys = <>;
     };
 
     default_transform: keymap_transform_0 {
