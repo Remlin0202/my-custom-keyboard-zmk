@@ -6,12 +6,14 @@ on:
       - 'case/**'
       - 'images/**'
       - 'README.md'
+      - 'bootloader/**'
   pull_request:
     paths-ignore:
       - 'hardware/**'
       - 'case/**'
       - 'images/**'
       - 'README.md'
+      - 'bootloader/**'
   workflow_dispatch:
 
 jobs:
